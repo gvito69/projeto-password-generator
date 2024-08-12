@@ -1,0 +1,1 @@
+Projeto desenvolvido durante minicurso de Linux e Git do PetCC. 
