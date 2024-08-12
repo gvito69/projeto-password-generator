@@ -38,6 +38,16 @@ DIGITS="0123456789"
 SYMBOLS="!@#$%^&*()-_=+[]{}|;:,.<>?/~"
 
 # # Construir a lista de caracteres permitidos
+ALL_CHARACTERS="$LOWERCASE"
+if $USE_UPPERCASE; then
+  ALL_CHARACTERS="$ALL_CHARACTERS$UPPERCASE"
+fi
+if $USE_DIGITS; then
+  ALL_CHARACTERS="$ALL_CHARACTERS$DIGITS"
+fi
+if $USE_SYMBOLS; then
+  ALL_CHARACTERS="$ALL_CHARACTERS$SYMBOLS"
+fi
 
 # Gerar a senha: 
 # o /dev/urandom gera bytes aleatórios, para conseguir
