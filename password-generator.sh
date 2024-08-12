@@ -52,7 +52,7 @@ fi
 # Gerar a senha: 
 # o /dev/urandom gera bytes aleatórios, para conseguir
 # uma senha precisamos limpar esses bytes de alguma forma
-PASSWORD=$(cat /dev/urandom) 
+PASSWORD=$(< /dev/urandom tr -dc "$ALL_CHARACTERS" | head -c "$LENGTH")
 
 # Exibir a senha gerada
 echo "Senha gerada: $PASSWORD"
