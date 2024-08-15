@@ -8,6 +8,9 @@ function show_help() {
  echo "  -d               : incluir números"
  echo "  -s               : incluir símbolos"
  echo "  -h               : exibir essa mensagem de ajuda"
+ echo "  -o		  : Salva a senha gerada em um arquivo"
+ echo "  -n NAME          : Adiciona um nome a senha gerada"
+ echo "  -p               : Exibe senhas geradas"
  echo " "
  echo "O comportamento padrão do script é gerar uma senha de 8 caracteres minúsculos."
 }
@@ -17,6 +20,7 @@ LENGTH=8
 USE_UPPERCASE=false
 USE_DIGITS=false
 USE_SYMBOLS=false
+NAME="" 
 
 # Parsear argumentos
 OPTIND=1
@@ -28,6 +32,9 @@ while getopts "l:udsh" opt; do
     d) USE_DIGITS=true;;
     s) USE_SYMBOLS=true ;;
     h) show_help ; exit 0 ;;
+    o) echo "$OPTARG" >> senhas.txt
+    n) NAME="$OPTARG"
+    p) cat senhas.txt
   esac
 done
 

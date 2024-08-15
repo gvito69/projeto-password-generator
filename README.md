@@ -7,6 +7,9 @@ Opções:
   -u               : incluir letras maiúsculas
   -d               : incluir números
   -s               : incluir símbolos
-  -h               : exibir essa mensagem de ajuda</pre>
+  -h               : exibir essa mensagem de ajuda
+  -o		           : Salva a senha gerada em um arquivo
+  -n NAME          : Adiciona um nome a senha gerada
+  -p               : Exibe senhas geradas</pre>
 
 O comportamento padrão do script é gerar uma senha de 8 caracteres minúsculos.
